@@ -1,0 +1,21 @@
+# General
+# ------------------------------------------------------------------------------
+USE_DOCKER=True
+
+# Compress
+# ------------------------------------------------------------------------------
+# Enable if compression needs to be tested
+COMPRESS_ENABLED=False
+
+# Debug
+# ------------------------------------------------------------------------------
+# Disable for performance testing
+DJANGO_DEBUG=True
+
+# GCP
+# ------------------------------------------------------------------------------
+GOOGLE_APPLICATION_CREDENTIALS=".envs/.local/.gcp-key.json"
+
+# Valkey
+# ------------------------------------------------------------------------------
+VALKEY_URL=valkey://valkey:6379/0

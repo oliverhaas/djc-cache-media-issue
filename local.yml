@@ -1,0 +1,25 @@
+services:
+  django: &django
+    build:
+      context: .
+      dockerfile: ./compose/local/django/Dockerfile
+    image: djc_cache_media_issue_local_django
+    container_name: djc_cache_media_issue_local_django
+    depends_on:
+      - valkey
+    volumes:
+      - .:/app:z
+    env_file:
+      - ./.envs/.local/.django
+    ports:
+      - "8000:8000"
+    command: /start
+
+  valkey:
+    build:
+      context: .
+      dockerfile: ./compose/production/valkey/Dockerfile
+    image: djc_cache_media_issue_production_valkey
+    container_name: djc_cache_media_issue_local_valkey
+    ports:
+      - "6379:6379"
